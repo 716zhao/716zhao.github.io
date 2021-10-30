@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-28T13:34:32.213Z</updated>
+  <updated>2021-10-30T15:17:26.712Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/10/28/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://example.com/2021/10/28/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2021-10-28T11:46:15.000Z</published>
-    <updated>2021-10-28T13:34:32.213Z</updated>
+    <updated>2021-10-30T15:17:26.712Z</updated>
     
     <content type="html"><![CDATA[<p>第一章：Spring框架概述：<br>  1.目的：Spring是为了解决繁琐的软件开发而创建的。</p><p>  2.作用：解耦合，方便测试，集成框架，降低API(对JDBC等进行封装)开发难度。</p><p>  3.特点：Spring不同于Struts、Hibernate等单层框架，它可以糅合多个框架，将多个单层框架建立成一个连贯的整体，Spring提供了一个更完善的开发环境。</p><p>  4.概述：轻量级(Jar包数量少)的，开源的JavaEE框架。</p><p>  5.核心组成部分：IOC和Aop<br>     (1)IOC:控制反转，把创建的对象过程交给Spring进行管理。<br>     (2)Aop:面向切面，在不修改源代码的情况下添加或修改功能。<br>  参考文献:<a href="https://baike.so.com/doc/6841943-7059231.html">https://baike.so.com/doc/6841943-7059231.html</a></p><hr><p>第二章：</p>]]></content>
     
@@ -35,6 +35,8 @@
     
     
     
+    
+    <category term="框架" scheme="http://example.com/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -63,6 +65,28 @@
   </entry>
   
   <entry>
+    <title>拯哥确实强</title>
+    <link href="http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/"/>
+    <id>http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/</id>
+    <published>2021-10-27T10:52:37.000Z</published>
+    <updated>2021-10-28T09:59:22.443Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一章</p><p>—第二章</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;第一章&lt;/p&gt;
+&lt;p&gt;—第二章&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>我的第一篇博客文章</title>
     <link href="http://example.com/2021/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
     <id>http://example.com/2021/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</id>
@@ -78,28 +102,6 @@
 &lt;hr&gt;
 &lt;p&gt;第二章&lt;/p&gt;
 &lt;hr&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>拯哥确实强</title>
-    <link href="http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/"/>
-    <id>http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/</id>
-    <published>2021-10-27T10:52:37.000Z</published>
-    <updated>2021-10-28T09:59:22.443Z</updated>
-    
-    <content type="html"><![CDATA[<p>第一章</p><p>—第二章</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;第一章&lt;/p&gt;
-&lt;p&gt;—第二章&lt;/p&gt;
 </summary>
       
     
