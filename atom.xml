@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-30T15:17:26.712Z</updated>
+  <updated>2021-11-01T14:08:41.444Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2021/10/28/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://example.com/2021/10/28/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2021-10-28T11:46:15.000Z</published>
-    <updated>2021-10-30T15:17:26.712Z</updated>
+    <updated>2021-11-01T14:08:41.444Z</updated>
     
-    <content type="html"><![CDATA[<p>第一章：Spring框架概述：<br>  1.目的：Spring是为了解决繁琐的软件开发而创建的。</p><p>  2.作用：解耦合，方便测试，集成框架，降低API(对JDBC等进行封装)开发难度。</p><p>  3.特点：Spring不同于Struts、Hibernate等单层框架，它可以糅合多个框架，将多个单层框架建立成一个连贯的整体，Spring提供了一个更完善的开发环境。</p><p>  4.概述：轻量级(Jar包数量少)的，开源的JavaEE框架。</p><p>  5.核心组成部分：IOC和Aop<br>     (1)IOC:控制反转，把创建的对象过程交给Spring进行管理。<br>     (2)Aop:面向切面，在不修改源代码的情况下添加或修改功能。<br>  参考文献:<a href="https://baike.so.com/doc/6841943-7059231.html">https://baike.so.com/doc/6841943-7059231.html</a></p><hr><p>第二章：</p>]]></content>
+    <content type="html"><![CDATA[<p>第一章：Spring框架概述：<br>  1.目的：Spring是为了解决繁琐的软件开发而创建的。</p><p>  2.作用：解耦合，方便测试，集成框架，降低API(对JDBC等进行封装)开发难度。</p><p>  3.特点：Spring不同于Struts、Hibernate等单层框架，它可以糅合多个框架，将多个单层框架建立成一个连贯的整体，Spring提供了一个更完善的开发环境。</p><p>  4.概述：轻量级(Jar包数量少)的，开源的JavaEE框架。</p><p>  5.核心组成部分：IOC和Aop<br>     (1)IOC:控制反转，把创建的对象过程交给Spring进行管理。<br>     (2)Aop:面向切面，在不修改源代码的情况下添加或修改功能。<br>  参考文献:<a href="https://baike.so.com/doc/6841943-7059231.html">https://baike.so.com/doc/6841943-7059231.html</a></p><hr><p>第二章：IOC容器</p><ol><li><p>什么是IOC：控制反转，把对象的创建和对象的调用过程，交给Spring管理.</p></li><li><p>IOC底层原理：<br>（1）xml解析、工厂模式、反射</p></li><li><p>IOC过程：<br>（例子：）<br>第一步   xml配置文件，配置创建的对象<br>   <bean id = "dao" class = "com.atguigu.UserDao"></bean><br>第二步   有service类和dao类，创建工厂类<br>   calss UserFactory{</p><pre><code>     public static UserDao getDao&#123;     String classvalue = class属性值        //xml解析  ---&gt; 得到的结果为这个类的地址     Class clazz = Class.forName(classValue);        //通过反射创建对象     return (UserDao) clazz = clazz.newIstance();                             &#125;</code></pre><p>   }</p></li></ol><pre><code>4.IOC(接口)1.IOC思想基于IOC容器完成，IOC容器底层就是对象工厂。（★）2.Spring提供两种方式实现IOC容器（两个接口）        （1）BeanFactory：IOC容器基本实现，是Spring内部的使用接口，不提供开发人员进行使用    ★加载配置文件时不创建对象，在使用对象时才去创建        （2）ApplicationContext：BeanFactory接口的子接口，提供更多功能，一般由开发人员进行使用    ★加载配置文件时就创建对象3.ApplicationContext的实现类：    1.FileSystemXmlApplicationContext参数是 带盘符的路径，绝对路径         2.ClassPathXmlApplicationContext参数是 src下的路径</code></pre><hr><p>第三章：IOC操作Bean管理<br>    1.什么是Bean管理<br>        ①Spring创建对象<br>        ②Spring属性注入</p><pre><code> 2.两种Bean管理操作的实现方式    ①通过xml配置文件实现        1.创建对象：        （默认执行无参方法  ps:类中写了有参构造器不写无参构造器，默认没有无参构造器）        &lt;bean id = &quot;User&quot; class = &quot;con.atguigu.spring5.User&quot;&gt;&lt;/bean&gt;                2.属性注入：        DI(依赖注入)，是IOC的一种具体实现，即注入属性        两种注入方式：            ①.通过set方法注入（需要事先写好set方法）                    &lt;bean id=&quot;book&quot; class=&quot;com.atguigu.spring5.testdemo.Book&quot;&gt;                            &lt;property name=&quot;bname&quot; value=&quot;康师傅&quot;&gt;&lt;/property&gt;                      &lt;/bean&gt;            通过property(属性)操作            ②.通过有参构造器注入                     &lt;bean id=&quot;book&quot; class=&quot;com.atguigu.spring5.Book&quot;&gt;                            &lt;constructor-arg name=&quot;bname&quot; value=&quot;美年达&quot;&gt;&lt;/constructor-arg&gt;                            &lt;constructor-arg name=&quot;bauthor&quot; value=&quot;百事可乐&quot;&gt;&lt;/constructor-arg&gt;                        &lt;constructor-arg index=&quot;?&quot; value=&quot;?&quot;&gt;&lt;/constructor-arg&gt;                    &lt;/bean&gt;            通过constructor-arg给属性赋值；不要无参构造器; 需要配置所有属性; 或者可以通过index选择为第?个属性赋值                                    ③.p名称空间注入（了解即可，也需要提前在类中写好set方法）                     第一步：在配置文件中添加p名称空间                      xmlns:p=&quot;http://www.springframework.org/schema/p&quot;                     第二步：注入属性                     &lt;bean id=&quot;book&quot; class=&quot;com.atguigu.spring5.Book&quot; p:bname=&quot;美年达&quot; p:bauthor=&quot;百事可乐&quot;&gt;&lt;/bean&gt;            也需要无参构造器        3.xml注入其他类型属性          1.字面量：             （1）null值            &lt;property name=&quot;美年达&quot;&gt;            &lt;null/&gt;            &lt;/property&gt;               (2)  属性值包含特殊符号（如想显示书名号等等）            1.转义符号lt...            2.CDATA            &lt;property name=&quot;饮料名&quot;&gt;            &lt;value=![CDATA&lt;&lt;百事可乐&gt;&gt;]&gt;&lt;/value&gt;            &lt;/property&gt;        4.注入属性-外部bean            例：Book类的方法需要调用User类的方法                 public void add1()&#123;                         System.out.println(&quot;hahaha&quot;);                       user.add();                    &#125;                   创建User为Book的属性                private User user；                   创建User的set方法                public void setUser(User user) &#123;                        this.user = user;                    &#125;                    配置文件：                &lt;bean id=&quot;book&quot; class=&quot;com.atguigu.spring5.Book&quot;&gt;                        &lt;property name=&quot;user&quot; ref=&quot;user&quot;&gt;&lt;/property&gt;                    &lt;/bean&gt;                    &lt;bean id=&quot;user&quot; class=&quot;com.atguigu.spring5.User&quot;&gt;&lt;/bean&gt;                &lt;/beans&gt;                     即可        5.注入属性-内部bean和级联赋值                ②通过注解方式实现</code></pre>]]></content>
     
     
       
@@ -65,28 +65,6 @@
   </entry>
   
   <entry>
-    <title>拯哥确实强</title>
-    <link href="http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/"/>
-    <id>http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/</id>
-    <published>2021-10-27T10:52:37.000Z</published>
-    <updated>2021-10-28T09:59:22.443Z</updated>
-    
-    <content type="html"><![CDATA[<p>第一章</p><p>—第二章</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;第一章&lt;/p&gt;
-&lt;p&gt;—第二章&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>我的第一篇博客文章</title>
     <link href="http://example.com/2021/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
     <id>http://example.com/2021/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</id>
@@ -102,6 +80,28 @@
 &lt;hr&gt;
 &lt;p&gt;第二章&lt;/p&gt;
 &lt;hr&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>拯哥确实强</title>
+    <link href="http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/"/>
+    <id>http://example.com/2021/10/27/%E6%8B%AF%E5%93%A5%E7%A1%AE%E5%AE%9E%E5%BC%BA/</id>
+    <published>2021-10-27T10:52:37.000Z</published>
+    <updated>2021-10-28T09:59:22.443Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一章</p><p>—第二章</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;第一章&lt;/p&gt;
+&lt;p&gt;—第二章&lt;/p&gt;
 </summary>
       
     
